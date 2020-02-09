@@ -1,34 +1,112 @@
-module.exports = {
-  siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-  },
-  plugins: [
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+let siteMetadata = {
+  title: `Elemental`,
+  capitalizeTitleOnHome: true,
+  logo: `/images/logo.png`,
+  icon: `/images/icon.png`,
+  titleImage: `/images/wall.jpg`,
+  introTag: `PHOTOGRAPHER | VIDEOGRAPHER`,
+  description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
+  author: `@_akzhy`,
+  blogItemsPerPage: 10,
+  portfolioItemsPerPage: 10,
+  darkmode: true,
+  switchTheme: true,
+  navLinks: [
+      {
+          name: "HOME",
+          url: "/"
       },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      {
+          name: "ABOUT",
+          url: "/about"
       },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+      {
+          name: "BLOG",
+          url: "/blog"
+      },
+      {
+          name: "PORTFOLIO",
+          url: "/portfolio"
+      },
+      {
+          name: "CONTACT",
+          url: "/contact"
+      }
   ],
-}
+  footerLinks: [
+      {
+          name: "PRIVACY POLICY",
+          url: "/privacy-policy"
+      },
+      {
+          name: "GitHub",
+          url: "https://github.com/akzhy/gatsby-starter-elemental"
+      }
+  ],
+  social: [
+      {
+          name: "Facebook",
+          icon: "/images/Facebook.svg",
+          url: "#"
+      },
+      {
+          name: "Twitter",
+          icon: "/images/Twitter.svg",
+          url: "#"
+      },
+      {
+          name: "Instagram",
+          icon: "/images/Instagram.svg",
+          url: "#"
+      },
+      {
+          name: "Youtube",
+          icon: "/images/Youtube.svg",
+          url: "#"
+      }
+  ],
+  contact: {
+      /* Leave the below value completely empty (no space either) if you don't want a contact form. */
+      api_url: "./test.json",
+      description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
+      mail: "hi@akzhy.com",
+      phone: "000-000-0000",
+      address: "1234 \nLocation \nLocation"
+  }
+};
+
+module.exports = {
+  siteMetadata: siteMetadata,
+  plugins: [
+      `gatsby-plugin-sharp`,
+      `gatsby-transformer-sharp`,
+      `gatsby-plugin-react-helmet`,
+      {
+          resolve: `gatsby-transformer-remark`,
+          options: {
+              plugins: [
+                  "gatsby-remark-copy-linked-files",
+                  {
+                      resolve: `gatsby-remark-images`,
+                      options: {
+                          maxWidth: 1280
+                      }
+                  }
+              ]
+          }
+      },
+      {
+          resolve: `gatsby-source-filesystem`,
+          options: {
+              name: `contents`,
+              path: `${__dirname}/contents/`
+          }
+      },
+      {
+          resolve: `gatsby-plugin-less`,
+          options: {
+              strictMath: true
+          }
+      }
+  ]
+};
