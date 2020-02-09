@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import Sidebar from "react-sidebar";
+import NavLinks from "./navlinks";
 
 function SidebarContents() {
     return (
@@ -10,6 +11,7 @@ function SidebarContents() {
                 </Link>
             </div>
             <div className="links text-secondary">
+            <NavLinks />
             </div>
             <div className="social-links">
             </div>
