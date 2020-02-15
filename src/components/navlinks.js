@@ -85,3 +85,38 @@ class ThemeSwitchButton extends React.Component {
 		);
 	}
 }
+
+export default function() {
+  const data = useStaticQuery(graphql`
+      query NavbarLinkQuery {
+          site {
+              siteMetadata {
+                  navLinks {
+                      name
+                      url
+                  }
+                  darkmode
+                  switchTheme
+              }
+          }
+      }
+  `);
+  const items = data.site.siteMetadata.navLinks;
+  let list = [];
+
+  items.forEach(function(e, i) {
+      list.push(<ListItem key={e.url + "-" + i} data={e} />);
+  });
+
+  if (data.site.siteMetadata.switchTheme) {
+      list.push(
+          <ThemeSwitchButton
+              key="themeswitcher"
+              darkmode={data.site.siteMetadata.darkmode}
+          />
+      );
+  }
+
+  return <ul className="navbar-links">{list}</ul>;
+}
+
