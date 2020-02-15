@@ -1,5 +1,5 @@
 let siteMetadata = {
-  title: `Elemental`,
+  title: `Title`,
   capitalizeTitleOnHome: true,
   logo: `/images/logo.png`,
   icon: `/images/icon.png`,
@@ -40,7 +40,7 @@ let siteMetadata = {
       },
       {
           name: "GitHub",
-          url: "https://github.com/akzhy/gatsby-starter-elemental"
+          url: ""
       }
   ],
   social: [
