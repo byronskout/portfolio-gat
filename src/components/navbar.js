@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Sidebar from 'react-sidebar';
 import NavLinks from './navlinks';
+import "../styles/navbar.less";
 
 function SidebarContents() {
 	return (
@@ -39,12 +40,6 @@ class Navbar extends React.Component {
 	}
 
 	changeNavbarHeight() {
-		/* While the name states changeNavbarHeight, this does not directly change the navbar height. It simply reduces the width of the logo, which reduces the height and thereby the overall navbar height.
-
-		Also this slightly reduces the vertical padding
-
-		*/
-
 		window.addEventListener('scroll', function() {
 			if (this.scrollY > 0) {
 				document.querySelector('nav').classList.add('scrolled');

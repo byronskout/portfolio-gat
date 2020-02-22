@@ -1,0 +1,28 @@
+nav {
+	display: flex;
+	position: fixed;
+	width: 100%;
+	justify-content: space-between;
+	padding: 22px 44px;
+	align-items: center;
+	z-index: 99;
+	transition: height .25s;
+
+	#menu-open{
+		position: absolute;
+		left: 5%;
+		display: none;
+
+		.icon{
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+	img {
+		width: 46px;
+		height: auto;
+		align-items: center;
+		transition: width 0.25s;
+    }
+}
