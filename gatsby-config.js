@@ -4,9 +4,9 @@ let siteMetadata = {
 	logo: `/images/logo.png`,
 	icon: `/images/icon.png`,
 	titleImage: `/images/wall.jpg`,
-	introTag: `PHOTOGRAPHER | VIDEOGRAPHER`,
+	introTag: ``,
 	description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-	author: `@_akzhy`,
+	author: ``,
 	blogItemsPerPage: 10,
 	portfolioItemsPerPage: 10,
 	darkmode: true,
@@ -69,7 +69,7 @@ let siteMetadata = {
 		/* Leave the below value completely empty (no space either) if you don't want a contact form. */
 		api_url: './test.json',
 		description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Proin ac consequat arcu.`,
-		mail: 'hi@akzhy.com',
+		mail: '',
 		phone: '000-000-0000',
 		address: '1234 \nLocation \nLocation'
 	}
